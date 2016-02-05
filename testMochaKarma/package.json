@@ -1,0 +1,24 @@
+{
+  "name": "testmochakarma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "grunt": "latest",
+    "grunt-mocha": "^0.4.15",
+    "karma": "^0.13.19",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-requirejs": "^0.2.4",
+    "mocha": "^2.4.5",
+    "requirejs": "^2.1.22",
+    "sinon": "^1.17.3"
+  }
+}

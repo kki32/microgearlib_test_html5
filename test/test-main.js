@@ -15,15 +15,18 @@ requirejs.config({
         'Microgear': '../lib/microgear/microgear',
     },
 
-    shim: {
-        'underscore': {
-            exports: '_'
-        }
-    },
+    // shim: {
+    //     'underscore': {
+    //         exports: '_'
+    //     }
+    // },
 
     // ask Require.js to load these files (all our tests)
-    deps: tests,
+    // deps: tests,
 
     // start test run, once Require.js is done
-    callback: window.__karma__.start
+    // callback: window.__karma__.start
+});
+require(tests, function () {
+    window.__karma__.start();
 });

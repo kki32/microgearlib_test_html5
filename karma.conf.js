@@ -37,12 +37,10 @@ module.exports = function(config) {
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'jenkins'],
-      jenkinsReporter: {
-      outputFile: 'test-results.xml'               // this will be mapped to the package 
-    },
-
-
+    reporters: ['progress','dots', 'junit'],
+junitReporter: {
+  outputFile: 'test-results.xml'
+},
     // web server port
     port: 9876,
 
@@ -57,7 +55,7 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers

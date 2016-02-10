@@ -64,6 +64,8 @@ describe('Code 1: Create', function() {
    
 
    });
+});
+
 
 
    // describe('Code 1: Case 2 and Case 3 Create with invalid input', function () {
@@ -361,7 +363,7 @@ describe('Code 1: Create', function() {
    //     })
    // })
 
-})
+// })
 
    describe('Code 4: Chat', function () {
     var microgear;
@@ -381,7 +383,6 @@ describe('Code 1: Create', function() {
 
         beforeEach(function (done) {
             this.timeout(beforeTimeout);
-            console.log("4/1");
             microgear = undefined;
             gearname = 'main';
             message = "Hello";
@@ -412,6 +413,7 @@ describe('Code 1: Create', function() {
         });
 
         it('should receive message', function (done) {
+          console.log("yes in")
             this.timeout(itTimeout);
             var stubConnect = sinon.stub();
             microgear.on('connected', stubConnect);

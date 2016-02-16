@@ -1,0 +1,59 @@
+
+<script src="https://netpie.io/microgear.js"></script>
+<script>
+    const APPKEY    = "mRN6Oh3bO3kZTJI";
+    const APPSECRET = "DqVtJx9lbf4UhMOBI42TN2FZDfuxHk";
+    const APPID     = "testHtml";
+    var c = 0;
+
+
+    var firefox_gearname = "chrome";
+    var destination = "z";
+ 
+    var microgear = Microgear.create({
+        gearkey: APPKEY,
+        gearsecret: APPSECRET
+    });
+ 
+    microgear.on('message',function(topic,msg) {
+        confirm(msg);
+        console.log("yup");
+
+        //document.getElementById('console').innerHTML += '<br>'+msg;
+    });
+ 
+    microgear.on('connected', function() {
+        console.log('netpie connected');
+        microgear.setalias(firefox_gearname);
+        microgear.setalias("k");
+        // microgear.unsubscribe('/topic');
+        // microgear.unsubscribe('/topic');
+        // microgear.subscribe('/topic');
+
+        //or you may use subscribe
+        //microgear.subscribe("/any/topic/here");
+    });
+ 
+    // microgear.resettoken(function(err) {
+        microgear.connect(APPID);
+
+    // });
+</script>
+
+
+<input type="text" id="text" size=40>
+<input type="button" value="send" onClick="send()">
+ 
+<script>
+    function send() {
+        // microgear.chat(destination,"hi,this is"+firefox_gearname);
+        microgear.subscribe('/topic');
+        console.log("hello");
+        microgear.publish('/topic');
+        //or you may use publish
+    }
+    // Hint : you can access a text content from document.getElementById('text').value
+</script>
+
+<div id="console"></div>
+ 

@@ -1,5 +1,5 @@
 // Karma configuration
-// Generated on Fri Feb 05 2016 20:52:55 GMT+0700 (ICT)
+// Generated on Thu Feb 11 2016 14:49:53 GMT+0700 (ICT)
 
 module.exports = function(config) {
   config.set({
@@ -10,21 +10,17 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'requirejs', 'chai', 'sinon'],
+    frameworks: ['mocha', 'chai', 'sinon'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      'test/test-main.js',
-    {pattern: 'lib/**/*.js', included: false},
-    {pattern: 'src/**/*.js', included: false},    
-    {pattern: 'test/**/*Spec.js', included: false}
+      'test/**/*Spec.js',
+      'https://netpie.io/microgear.js'
     ],
-
 
     // list of files to exclude
     exclude: [
-      'src/main.js'
     ],
 
 
@@ -33,14 +29,13 @@ module.exports = function(config) {
     preprocessors: {
     },
 
-
+browserNoActivityTimeout: 400000,
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress', 'junit', 'dots'],
-junitReporter: {
-  outputFile: 'test-results.xml'
-},
+    reporters: ['progress'],
+
+
     // web server port
     port: 9876,
 
@@ -51,7 +46,7 @@ junitReporter: {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_ERROR,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -66,7 +61,6 @@ junitReporter: {
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true,
-
 
     // Concurrency level
     // how many browser should be started simultaneous

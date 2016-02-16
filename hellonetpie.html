@@ -1,0 +1,30 @@
+<script src="microgear.js"></script>
+<script>
+	const APPKEY	= "mRN6Oh3bO3kZTJI";
+	const APPSECRET = "DqVtJx9lbf4UhMOBI42TN2FZDfuxHk";
+	const APPID 	= "testHtml";
+ 
+	var microgearname = "myMicrogear";
+ 
+	var microgear = Microgear.create({
+    	gearkey: APPKEY,
+    	gearsecret: APPSECRET
+	});
+microgear.on('message',function(topic,msg) {
+        document.getElementById("data").innerHTML = msg;
+	});
+ 
+	microgear.on('connected', function() {
+    	microgear.setname(microgearname);
+    	document.getElementById("data").innerHTML = "Now I am connected with netpie...";
+    	setInterval(function() {
+            microgear.chat(microgearname,"Hello from myself at "+Date.now());
+    	},5000);
+	});
+ 
+	microgear.resettoken(function(err) {
+    	microgear.connect(APPID);
+	});
+</script>
+ 
+<div id="data">_____</div>
